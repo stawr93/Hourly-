@@ -35,7 +35,11 @@ namespace HourlySharp.Models
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
+    {    
+        public DbSet<Order> Orders { get; set;} 
+        public DbSet<Offer> Offers { get; set;} 
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
